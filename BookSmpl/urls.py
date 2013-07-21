@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
 
+import book.views
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	url(r'^$', book.views.ListAccountView.as_view(),
+		name = 'accounts-list',),
     # Examples:
     # url(r'^$', 'BookSmpl.views.home', name='home'),
     # url(r'^BookSmpl/', include('BookSmpl.foo.urls')),

@@ -14,7 +14,4 @@ class Account(models.Model):
 
 	def __str__(self):
 		
-		return ' '.join([
-			self.account_number,
-			self.account_name,
-		])
+		return self.account_name
