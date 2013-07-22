@@ -1,0 +1,9 @@
+<h1>Add Account</h1>
+
+<form action="{% url "accounts-new" %}" method="POST">
+	{% csrf_token %}
+		{{ form.as_p }}
+	<input id="save_account" type="submit" value="Save">
+</form>
+
+<a href="{% url "accounts-list" %}">Back to list</a>

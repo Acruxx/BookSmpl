@@ -8,6 +8,8 @@ import book.views
 urlpatterns = patterns('',
 	url(r'^$', book.views.ListAccountView.as_view(),
 		name = 'accounts-list',),
+	url(r'^new$', book.views.CreateAccountView.as_view(),
+		name = 'accounts-new',),
     # Examples:
     # url(r'^$', 'BookSmpl.views.home', name='home'),
     # url(r'^BookSmpl/', include('BookSmpl.foo.urls')),
