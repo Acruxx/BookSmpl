@@ -1,9 +1,13 @@
-	<h1>Accounts</h1>
-	<table border="1px solid">
-		{% for account in object_list %}
-			<tr>
-				<td>{{ account.account_number }}</td>
-				<td>{{ account }}</td>
-			</tr>
-		{% endfor %}
-	</table>
+{% extends "base.html" %}
+
+	{% block content %}
+		<h1>Accounts</h1>
+		<table border="1px solid">
+			{% for account in object_list %}
+				<tr>
+					<td>{{ account.account_number }}</td>
+					<td>{{ account }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endblock content %}
