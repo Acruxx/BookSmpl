@@ -40,4 +40,17 @@ class Verification(models.Model):
 
 	def __unicode__(self):
 		pass
+
+class Transaction(models.Model):
+	verification = models.ForeignKey(Verification)
+	transaction_date = models.DateField()
+	entry_date = models.DateField(
+		auto_now = True
+		)
+	class Meta:
+		verbose_name = ('Transaction')
+		verbose_name_plural = ('Transactions')
+
+	def __unicode__(self):
+		pass
     

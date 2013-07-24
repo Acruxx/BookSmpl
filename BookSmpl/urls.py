@@ -10,6 +10,8 @@ urlpatterns = patterns('',
 		name = 'accounts-list',),
 	url(r'^new$', book.views.CreateAccountView.as_view(),
 		name = 'accounts-new',),
+	url(r'^new-verification$', book.views.CreateVerificationView.as_view(),
+		name = 'verifications-new',),
     # Examples:
     # url(r'^$', 'BookSmpl.views.home', name='home'),
     # url(r'^BookSmpl/', include('BookSmpl.foo.urls')),
