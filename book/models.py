@@ -42,7 +42,9 @@ class Verification(models.Model):
 		pass
 
 class Transaction(models.Model):
-	verification = models.ForeignKey(Verification)
+	verification = models.ForeignKey(
+		Verification
+		)
 	transaction_date = models.DateField()
 	entry_date = models.DateField(
 		auto_now = True
@@ -50,6 +52,25 @@ class Transaction(models.Model):
 	class Meta:
 		verbose_name = ('Transaction')
 		verbose_name_plural = ('Transactions')
+
+	def __unicode__(self):
+		pass
+    
+class entry(models.Model):
+	transaction = models.ForeignKey(
+		Transaction
+		)
+	account = models.ForeignKey(
+		Account
+		)
+	entry_type = models.CharField(
+		max_length = 20
+		)
+	entry_sum = models.FloatField()
+
+	class Meta:
+		verbose_name = ('entry')
+		verbose_name_plural = ('entrys')
 
 	def __unicode__(self):
 		pass
