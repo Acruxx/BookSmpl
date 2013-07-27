@@ -3,11 +3,11 @@
 	{% block content %}
 		<h1>Add Verification</h1>
 
-		<form action="{% url "accounts-new" %}" method="POST">
+		<form action="{% url "verifications-new" %}" method="POST">
 			{% csrf_token %}
 				{{ form.as_p }}
 			<input id="save_account" type="submit" value="Save">
 		</form>
 
 		<a href="{% url "accounts-list" %}">Back to list</a>
-	{% endblock content %}
+	{% endblock content %}t

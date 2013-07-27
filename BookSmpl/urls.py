@@ -12,6 +12,8 @@ urlpatterns = patterns('',
 		name = 'accounts-new',),
 	url(r'^new-verification$', book.views.CreateVerificationView.as_view(),
 		name = 'verifications-new',),
+	url(r'^new-vt$', book.views.CreateVerificationTransactionView.as_view(),
+		name = 'vt-new',),
     # Examples:
     # url(r'^$', 'BookSmpl.views.home', name='home'),
     # url(r'^BookSmpl/', include('BookSmpl.foo.urls')),

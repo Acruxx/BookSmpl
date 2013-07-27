@@ -17,13 +17,18 @@ class Account(models.Model):
 		return self.account_name
 
 class Verification(models.Model):
+	TYPE = (
+		('IN',	'Income'),
+		('EX',	'Expence'),
+	)
 	verification_number = models.AutoField(
 		primary_key = True,
 		)
 	verification_date = models.DateField()
 	expiration_date = models.DateField()
 	verification_type = models.CharField(
-		max_length = 25
+		max_length = 25,
+		choices = TYPE,
 		)
 	verification_desc = models.CharField(
 		max_length = 50
@@ -57,6 +62,9 @@ class Transaction(models.Model):
 		pass
     
 class entry(models.Model):
+	TYPE = (
+		('DEBIT', 'Debit'),
+		('CREDIT', 'Credit')) 
 	transaction = models.ForeignKey(
 		Transaction
 		)
@@ -64,7 +72,8 @@ class entry(models.Model):
 		Account
 		)
 	entry_type = models.CharField(
-		max_length = 20
+		max_length = 20,
+		choices = TYPE,
 		)
 	entry_sum = models.FloatField()
 
