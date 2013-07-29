@@ -43,8 +43,8 @@ class Verification(models.Model):
 		verbose_name = ('Verification')
     	verbose_name_plural = ('Verifications')
 
-	def __unicode__(self):
-		pass
+	def __int__(self):
+		return self.verification_number
 
 class Transaction(models.Model):
 	verification = models.ForeignKey(
@@ -61,7 +61,7 @@ class Transaction(models.Model):
 	def __unicode__(self):
 		pass
     
-class entry(models.Model):
+class Entry(models.Model):
 	TYPE = (
 		('DEBIT', 'Debit'),
 		('CREDIT', 'Credit')) 
