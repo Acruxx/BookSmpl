@@ -22,12 +22,10 @@ class CreateVerificationView(CreateView):
 	model = Verification
 
 	def get_success_url(self):
-		return reverse('accounts-list')
+		return reverse('transactions-new')
 
-class CreateVerificationTransactionView(CreateView):
-	model = Verification
-	form_class = forms.VerificationTransactionFormSet
-	template_name = 'vt_form.html'
+class CreateTransactionView(CreateView):
+	model = Transaction
 
 	def get_success_url(self):
 		return reverse('accounts-list')

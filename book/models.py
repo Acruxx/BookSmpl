@@ -13,7 +13,6 @@ class Account(models.Model):
 		)
 
 	def __str__(self):
-		
 		return self.account_name
 
 class Verification(models.Model):
@@ -43,8 +42,8 @@ class Verification(models.Model):
 		verbose_name = ('Verification')
     	verbose_name_plural = ('Verifications')
 
-	def __int__(self):
-		return self.verification_number
+	def __unicode__(self):
+		return str(self.creation_date) + " - " + str(self.verification_desc)
 
 class Transaction(models.Model):
 	verification = models.ForeignKey(
